@@ -42,7 +42,7 @@
 			<ul class="list-inline info">
 				<li><a href="tel:12-3632-5265"><span class="fa fa-phone"></span> (12) 3632-5265</a></li>
 				<li><a href="mailto:contato@coyotevistorias.com.br?subject=Contato%20Coyote%20Vistorias"><span class="fa fa-envelope"></span> contato@coyotevistorias.com.br</a></li>
-				<li><span class="fa fa-clock-o"></span> Seg - Sext 8:00 - 18:00 / Sáb 08:00 - 12:00</a></li>
+				<li><span class="fa fa-clock-o"></span> <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="COMUNICADO - COVID-19 (CORONAVÍRUS): Estamos atendendo na loja com horário reduzido: Seg - Sext 10:00 - 18:00 / Sáb 08:30 - 12:30">Seg - Sext 8:00 - 18:00 / Sáb 08:30 - 12:30 </span></a></li>
 			</ul>
 			<ul class="list-inline social_icon">
 				<li><a href="https://www.facebook.com/coyotevistorias/"><span class="fa fa-facebook"></span></a></li>
@@ -93,23 +93,22 @@
 					<h2>Quer mais informações?</h2>
 					<h2 class="second_heading">Entre em contato!</h2>
 				</div>
-				<form role="form" class="form-inline text-right col-md-6" action="php/envia_email.php" method="POST">
-				   <input type="hidden" name="recipient" value="contato@coyotevistorias.com.br"> 
-				   <input type="hidden" name="redirect" value="https://www.coyotevistorias.com.br"> 
+				<form role="form" class="form-inline text-right col-md-6" action="https://simple-form.com/contato@coyotevistorias.com.br" method="POST" onsubmit="Evento()">
+				   <input type="hidden" name="redirectURL" value="https://www.coyotevistorias.com.br"> 
 				   <input type="hidden" name="subject" value="Contato do Site"> 
-				   <input type="hidden" name="email" value="contato@coyotevistorias.com.br">
 						<div class="form-group">
 							<input type="text" class="form-control" id="name" name="name" placeholder="Nome" 
 							required oninvalid="this.setCustomValidity('Por favor, informe seu Nome.')" onchange="try{setCustomValidity('')}catch(e){}">
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control" id="email" name="email" placeholder="E-Mail"
+							<input type="email" class="form-control" id="email" name="replyTo" placeholder="E-Mail"
 							required oninvalid="this.setCustomValidity('Por favor, informe seu E-Mail.')" onchange="try{setCustomValidity('')}catch(e){}">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" rows="10" id="msg" name="comment" placeholder="Mensagem" required oninvalid="this.setCustomValidity('Por favor, digite sua mensagem.')" onchange="try{setCustomValidity('')}catch(e){}"></textarea>
+							<textarea class="form-control" rows="10" id="msg" name="message" placeholder="Mensagem" required oninvalid="this.setCustomValidity('Por favor, digite sua mensagem.')" onchange="try{setCustomValidity('')}catch(e){}"></textarea>
 						</div>
-				   <button type="submit" id="send-mail" class="btn submit_btn">Enviar</button>
+
+				   <button type="submit" id="send-mail" class="btn submit_btn" onclick='insereTexto()'>Enviar</button>
 			   </form>		
 			</div>
 		</div>
@@ -157,11 +156,17 @@
 		</p>
 		</div><!-- Footer bottom end -->
 	</footer><!-- Footer end -->
-<script>
-    function Evento(){
-        alert('Mensagem enviada com sucesso!')
-    }
-</script>
+
+	<script>
+		function Evento(){
+			alert('Mensagem enviada com sucesso!')
+		}
+	</script>
+	<!--
+	<script type="text/javascript">
+	function insereTexto()
+	{document.getElementById('divTeste').innerHTML = 'Mensagem enviada com sucesso';}
+	</script>-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
