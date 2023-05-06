@@ -874,7 +874,7 @@ nav.navbar.bootsnav ul.nav > li > a{
     
     nav.navbar.bootsnav.navbar-mobile .tab-menu,
     nav.navbar.bootsnav.navbar-mobile .tab-content{
-        width: 100%;
+        width: 10%;
         display: block;
     }
 }

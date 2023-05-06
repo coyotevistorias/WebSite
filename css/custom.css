@@ -171,10 +171,20 @@ nav.navbar.bootsnav ul.nav > li > a {
 nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:focus {
     color: #aaa;
 }
+
 .navbar-brand {
     height: auto;
-    padding: 20px 15px;
+    padding: 10px 15px;
 }
+
+.navbar-brand .logo{
+	align-self: flex-start;
+	object-fit: contain;
+	height: 80px;
+	padding: 5px;
+	max-width: 90%;
+}
+
 #navbar-menu {
     margin: 6px 0;
 }
